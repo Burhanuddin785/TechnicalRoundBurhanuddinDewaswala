@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.jpeg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.jpeg" /> -->
+    <link id="themeStylesheet" rel="stylesheet" href="./appDark.css"/>
+    <title>Technical Round</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+  </head>
+
+
+  <body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"><img src="./IMLOGO.png" alt=""></div>
+            <div class="navList">
+                <div class="navItem">SERVICES</div>
+                <div class="navItem">ABOUT US</div>
+                <div class="navItem">CASES</div>
+            </div>
+            
+    <div  class="toggle">
+  <input onclick="toggleTheme()" type="checkbox" checked name="checkbox" id="checkbox" />
+  <label for="checkbox" class="label"> </label>
+    </div>
+
+            <div class="signUp">
+                SIGN UP 
+<button class="button">
+  <div class="button-box">
+    <span class="button-elem">
+      <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+        ></path>
+      </svg>
+    </span>
+    <span class="button-elem">
+      <svg viewBox="0 0 46 40">
+        <path
+          d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+        ></path>
+      </svg>
+    </span>
+  </div>
+</button>
+<script>
+     let isDarkMode = true; // false = light theme
+
+    function toggleTheme() {
+      const themeLink = document.getElementById('themeStylesheet');
+      if (isDarkMode) {
+        themeLink.setAttribute('href', 'appLight.css');
+      } else {
+        themeLink.setAttribute('href', 'appDark.css');
+      }
+      isDarkMode = !isDarkMode;
+    }
+</script>
+            </div>
+        </div>
+        <div class="heroSec">
+            <div class="leftSec">
+                <div class="heading">UNLIMITED PRETENCIOUS  <br/><img src="./Picture1.png" alt="image"/><img src="./Picture2.png" alt="image"/><img src="./Picture3.png" alt="image"/> IDEAS</div>
+                <div class="secFooter">
+                    <div class="left">OUR SOLUTIONS</div>
+                    <div class="right">WE PROVIDE THE FULL FUNNEL APPROACH</div>
+                </div>
+            </div>
+            <div class="rightSec">
+                <div class="heading">YOUR BUSINESS BOOST</div>
+                <div class="demoCall">
+                    <span class="text">Book Demo Call</span>
+                    <span class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <script>
+            const card = document.querySelector('.rightSec');
+
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left; 
+                const y = e.clientY - rect.top;  
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = -(y - centerY) / 20; 
+                const rotateY = (x - centerX) / 20;
+
+                card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `rotateX(0deg) rotateY(0deg)`; 
+            });
+            </script>
+
+        </div>
+        <div class="featured">
+            <div class="leftSec">
+                <div class="leftSecSpec">WEB ANALYTICS</div>
+                <div class="leftSecSpec">EMAIL MARKETING</div>
+                <div class="leftSecSpec">SEO 2.0</div>
+            </div>
+            <div class="rightSec">
+                <div class="featuredCard1">UNIQUE BUSINESS SOLUTIONS</div>
+                <div class="featuredCard2"> <div class="iconWrapper"> <img src="./up-right-arrow.png" alt=""></div> <span>OUR CASE STUDIES</span></div>
+                <div class="featuredCard3">SUCCESSFUL PROJECTS</div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+
